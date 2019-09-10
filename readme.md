@@ -8,7 +8,7 @@ The frontalization algorithm is based on the implementation in : https://github.
 It has been changed in order to adapt for facial recognition on a raspberry Pi.
 
 To build your database of aligned faces run:
-python face_recognition_HAAR.py to extract and frontalize the image
+python face_recognition_HAAR.py 
 
 To test the algorithm using the raspberry s camera run:
 python main.py --ip "the ip adress of the raspberry" -o 8000
