@@ -2,7 +2,7 @@ This code is a facial recognition system for a RaspberryPi based on 3D frontaliz
 
 It is tested on Python3.6, and it uses dlib, Opencv3.0 and flask (for streaming the output to your web browser)
 
-To use it you must first create a database of the persons you want to recognize by filming the persons using the raspberry pi's camera and placing the videos of each person in a directory that has his/her name. All these directories must be inside a directory that you name Database in the root folder
+To use it you must first create a database of the persons you want to recognize by filming the persons using the raspberry pi's camera (resolution: 320,240) and placing the videos of each person in a directory that has his/her name. All these directories must be inside a directory that you name Database in the root folder
 
 The frontalization algorithm is based on the implementation in : https://github.com/dougsouza/face-frontalization
 It has been changed in order to adapt for facial recognition on a raspberry Pi.
