@@ -12,8 +12,10 @@ class ThreeD_Model:
 
     def load_model(self, path, name):
         model = scio.loadmat(path)[name]
-        self.out_A=np.asmatrix(np.array([[1.74475624e+03, 0,5.17641501e+02 ],[0,1.74362364e+03,  9.66243685e+02],[0, 0, 1.0]]),dtype='float32')
-        self.distCoeff=np.array([1.49069659e-01,-1.14636172, -2.42752680e-03, -1.30123452e-03,2.64749918e+00])
+        self.out_A=np.asmatrix(np.array([[291.0,0,158.0],[0,291.0,117.0],[0,0,1]]))
+        #self.out_A=np.asmatrix(np.array([[1.74475624e+03, 0,5.17641501e+02 ],[0,1.74362364e+03,  9.66243685e+02],[0, 0, 1.0]]),dtype='float32')
+        #self.distCoeff=np.array([1.49069659e-01,-1.14636172, -2.42752680e-03, -1.30123452e-03,2.64749918e+00])
+        self.distCoeff=np.array([0.03885,-0.2265,0.005354,-0.0016,0.1353])
         self.size_U = model['sizeU'][0, 0][0] #1x2
         self.model_TD = np.asarray(model['threedee'][0,0], dtype='float32') #68x3
         self.indbad = model['indbad'][0, 0]#0x1

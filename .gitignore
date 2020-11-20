@@ -1,0 +1,5 @@
+*.mp4
+*.jpg
+__pycache__/
+Database/
+Database_aligned_3D/

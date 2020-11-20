@@ -32,6 +32,7 @@ def process():
     global vs, outputFrame, lock, registeredFace,lock
 
     imgArray,labels=face_recognition_HAAR.readImageOnly("./Database_aligned_3D")
+    print("Database contains ",len(imgArray)," images consider adding/removing images to balance accuracy and speed \n")
     names=list(set(labels))
     names.sort()
     
@@ -44,9 +45,11 @@ def process():
     
     eyeMask = np.asarray(sio.loadmat('frontalization_models/eyemask.mat')['eyemask'])
     eyeMask=imutils.resize(eyeMask[52:250,91:225],height=60) 
-   
-    model3D.out_A=np.asmatrix(np.array([[0.5*506.696672,0,0.5*324.202],[0, 0.5*506.3752, 0.5*245.7785096],[0,0,1]]), dtype='float32') 
-    model3D.distCoeff=None
+    
+    model3D.out_A=np.asmatrix(np.array([[291.0,0,158.0],[0,291.0,117.0],[0,0,1]]))
+    model3D.distCoeff=np.array([0.03885,-0.2265,0.005354,-0.0016,0.1353])
+    #model3D.out_A=np.asmatrix(np.array([[0.5*506.696672,0,0.5*324.202],[0, 0.5*506.3752, 0.5*245.7785096],[0,0,1]]), dtype='float32') 
+    #model3D.distCoeff=None
    
    
     print("Training lbph recognizer")
